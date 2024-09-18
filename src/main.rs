@@ -2,14 +2,15 @@ use std::env;
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
 
-fn fileLineByLine(file_path: &str) -> io::Result<()> {
+fn filelinebyline(file_path: &str) -> io::Result<()> {
     let file=File::open(file_path)?;
     let reader=BufReader::new(file);
-   println!("Reading {} line by line: ", filepath);
+   println!("Reading {} line by line: ", file_path);
    for line in reader.lines() {
        let line = line?;
        println!("{}", line);
    }
+   Ok(())
 }
 
 fn main() -> io::Result<()> {
@@ -19,7 +20,7 @@ fn main() -> io::Result<()> {
         return Ok(());
     }
     for file_path in &args[1..] {
-        fileLineByLine(file_path)?;
+        filelinebyline(file_path)?;
     }
     Ok(())
 }
