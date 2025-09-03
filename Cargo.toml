@@ -1,8 +1,23 @@
 [package]
 name = "bad_variable_changer"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+authors = ["Tanish Neema tanishneema15@gmail.com"]
+description = "Universal variable name fixer - replaces bad variable names with variations of 'YourMom'"
+license = "MIT"
+repository = "https://github.com/Mr615-TN/bad_variable_changer"
+keywords = ["refactoring", "variables", "code-quality", "cli"]
+categories = ["command-line-utilities", "development-tools"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "bad_variable_changer"
+path = "main.rs"
 
 [dependencies]
+regex = "1.10"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
