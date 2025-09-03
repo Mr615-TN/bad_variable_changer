@@ -33,21 +33,21 @@ A universal command-line tool that finds terrible variable names in your codebas
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/yourmom-fixer.git
-cd yourmom-fixer
+git clone https://github.com/Mr615-TN/bad_variable_changer.git
+cd bad_variable_changer
 
 # Build the release binary
 cargo build --release
 
 # The binary will be in target/release/yourmom-fixer
 # Copy it to your PATH for global access
-cp target/release/yourmom-fixer /usr/local/bin/
+cp target/release/bad_variable_changer /usr/local/bin/
 ```
 
 ### Using Cargo
 
 ```bash
-cargo install --git https://github.com/yourusername/yourmom-fixer.git
+cargo install --git https://github.com/Mr615-TN/bad_variable_changer.git
 ```
 
 ## 🎮 Usage
@@ -56,29 +56,29 @@ cargo install --git https://github.com/yourusername/yourmom-fixer.git
 
 ```bash
 # Process specific files (creates .fixed versions)
-yourmom-fixer main.py utils.js
+bad_variable_changer main.py utils.js
 
 # Process files in-place with backups
-yourmom-fixer -i -b src/main.rs src/lib.rs
+bad_variable_changer -i -b src/main.rs src/lib.rs
 
 # Process entire directory recursively
-yourmom-fixer -r ./my-project
+bad_variable_changer -r ./my-project
 
 # Preview changes without modifying files
-yourmom-fixer --dry-run -r ./src
+bad_variable_changer --dry-run -r ./src
 ```
 
 ### Advanced Usage
 
 ```bash
 # Process multiple directories with different options
-yourmom-fixer -i -r -b ./frontend ./backend ./shared
+bad_variable_changer -i -r -b ./frontend ./backend ./shared
 
 # Process only specific file types in current directory
-yourmom-fixer *.py *.js *.rs
+bad_variable_changer *.py *.js *.rs
 
 # Safe exploration of a new codebase
-yourmom-fixer --dry-run -r ./downloaded-project
+bad_variable_changer --dry-run -r ./downloaded-project
 ```
 
 ## 🎭 What Gets Replaced
@@ -109,10 +109,10 @@ OPTIONS:
     -h, --help          Show help message
 
 EXAMPLES:
-    yourmom-fixer main.rs lib.py                    # Process specific files
-    yourmom-fixer -i -b src/                        # Process src/ in-place with backups
-    yourmom-fixer -r .                              # Process all source files recursively
-    yourmom-fixer --dry-run -r ./project            # Preview changes without modifying
+    bad_variable_changer main.rs lib.py                    # Process specific files
+    bad_variable_changer -i -b src/                        # Process src/ in-place with backups
+    bad_variable_changer -r .                              # Process all source files recursively
+    bad_variable_changer --dry-run -r ./project            # Preview changes without modifying
 ```
 
 ## 🎯 Example Transformations
@@ -193,12 +193,12 @@ The tool understands different language patterns:
 
 ### Build Steps
 ```bash
-git clone https://github.com/yourusername/yourmom-fixer.git
-cd yourmom-fixer
+git clone https://github.com/Mr615-TN/bad_variable_changer.git
+cd bad_variable_changer
 cargo build --release
 ```
 
-The optimized binary will be at `target/release/yourmom-fixer`.
+The optimized binary will be at `target/release/bad_variable_changer`.
 
 ### Development
 ```bash
@@ -225,7 +225,7 @@ Contributions welcome! Areas for improvement:
 
 ## 📜 License
 
-MIT License - see LICENSE file for details.
+GPL-3.0 - see LICENSE file for details.
 
 ## ⚠️ Disclaimer
 
