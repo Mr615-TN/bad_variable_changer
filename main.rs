@@ -272,7 +272,7 @@ fn main() -> io::Result<()> {
         if dry_run {
             // For dry run, just show what would be replaced
             if let Some(lang) = detect_language(&file_path) {
-                if let Ok(content) = modifyfile::read_file(file_path.to_str().unwrap()) {
+                if let Ok(content) = fs::read_to_string(&file_path) {
                     let (_, replacements) = extract_and_replace_variables(&content, &lang);
                     if !replacements.is_empty() {
                         println!("Would process {} ({:?}):", file_path.display(), lang);
@@ -301,3 +301,4 @@ fn main() -> io::Result<()> {
     
     Ok(())
 }
+
