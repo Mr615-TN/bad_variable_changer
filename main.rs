@@ -180,6 +180,7 @@ fn print_help() {
     println!();
     println!("Supports: Rust, JavaScript/TypeScript, Python, Java, C/C++, C#, Go, Ruby, PHP, Kotlin, Swift, Dart, Scala");
     println!();
+    let program_name = env::args().nth(0).unwrap_or("bad_variable_changer".to_string());
     println!("USAGE:");
     println!("    {} [OPTIONS] <files_or_directories>", env::args().nth(0).unwrap_or("yourmom-fixer".to_string()));
     println!();
@@ -191,10 +192,10 @@ fn print_help() {
     println!("    -h, --help          Show this help message");
     println!();
     println!("EXAMPLES:");
-    println!("    {} main.rs lib.py                    # Process specific files");
-    println!("    {} -i -b src/                        # Process src/ in-place with backups");
-    println!("    {} -r .                              # Process all source files recursively");
-    println!("    {} --dry-run -r ./project            # Preview changes without modifying");
+    println!("    {} main.rs lib.py                    # Process specific files", program_name);
+    println!("    {} -i -b src/                        # Process src/ in-place with backups", program_name);
+    println!("    {} -r .                              # Process all source files recursively", program_name);
+    println!("    {} --dry-run -r ./project            # Preview changes without modifying", program_name);
     println!();
     println!("SUPPORTED EXTENSIONS:");
     println!("    .rs .js .jsx .ts .tsx .py .java .cpp .cc .cxx .c++ .c .h .cs .go .rb .php .kt .swift .dart .scala");
@@ -272,7 +273,7 @@ fn main() -> io::Result<()> {
         if dry_run {
             // For dry run, just show what would be replaced
             if let Some(lang) = detect_language(&file_path) {
-                if let Ok(content) = modifyfile::read_file(file_path.to_str().unwrap()) {
+                if let Ok(content) = fs::read_to_string(&file_path) {
                     let (_, replacements) = extract_and_replace_variables(&content, &lang);
                     if !replacements.is_empty() {
                         println!("Would process {} ({:?}):", file_path.display(), lang);
