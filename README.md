@@ -117,7 +117,7 @@ EXAMPLES:
 
 ## 🎯 Example Transformations
 
-### Before:
+### Python Before:
 ```python
 def calculate_something(a, b):
     temp = a * b
@@ -128,7 +128,7 @@ def calculate_something(a, b):
     return temp
 ```
 
-### After:
+### Python After:
 ```python
 def calculate_something(yourmom, yOurMom):
     YourMom = yourmom * yOurMom
