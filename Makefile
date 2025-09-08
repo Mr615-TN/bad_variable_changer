@@ -1,10 +1,10 @@
-# YourMom Variable Fixer Makefile
+# Bad Variable Fixer Makefile
 
 .PHONY: build release install clean test fmt clippy help
 
 # Default target
 help:
-	@echo "🔥 YourMom Variable Fixer Build System 🔥"
+	@echo "🔥 Bad Variable Fixer Build System 🔥"
 	@echo "Available targets:"
 	@echo "  build    - Build debug version"
 	@echo "  release  - Build optimized release version"
@@ -56,11 +56,11 @@ clippy:
 package: release
 	@echo "📦 Creating distribution packages..."
 	@mkdir -p dist
-	@cp target/release/yourmom-fixer dist/
+	@cp target/release/bad_variable_changer dist/
 	@cp README.md dist/
 	@cp install.sh dist/
-	@cd dist && tar -czf yourmom-fixer-linux.tar.gz yourmom-fixer README.md install.sh
-	@echo "✅ Distribution package created: dist/yourmom-fixer-linux.tar.gz"
+	@cd dist && tar -czf bad_variable_changer-linux.tar.gz bad_variable_changer README.md install.sh
+	@echo "✅ Distribution package created: dist/bad_variable_changer-linux.tar.gz"
 
 # Development workflow
 dev: fmt clippy test build
