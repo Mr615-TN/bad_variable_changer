@@ -68,11 +68,11 @@ if [ $? -eq 0 ]; then
         echo ""
     fi
     
-    echo "🎉 yourmom-fixer is now installed!"
+    echo "🎉 bad_variable_changer is now installed!"
     echo ""
     echo "Try it out:"
-    echo "  yourmom-fixer --help"
-    echo "  yourmom-fixer --dry-run *.py"
+    echo "  bad_variable_changer --help"
+    echo "  bad_variable_changer --dry-run *.py"
     echo ""
     echo "Happy variable fixing! 🚀"
 else
